@@ -1,5 +1,18 @@
 import java.lang.reflect.Method
 
+
+/**
+* A simple object that lets you discover the capabilities of other objects 
+* without referring to documentation immediately. Inspired by Ruby's elegant reflection.
+*   
+* Usage: 
+* import MethodDiscovery._
+*
+* val aString = "Hello, folks"
+* namesOf(methods(aString))
+* signaturesOf(methods(aString))
+*
+*/
 object MethodDiscovery {
   def methods(o: AnyRef): List[Method] = {
     List.fromArray(o.getClass.getMethods)
